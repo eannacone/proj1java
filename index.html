@@ -7,6 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    git
+    <script>
+        var options = ['rock', 'paper', 'scissors'];
+        let computerPlay = options[Math.floor(Math.random()*options.length)];
+        let playerSelection = window.prompt("Enter your choice: rock, paper or scissors")
+
+
+        function game(playerSelection, computerSelection=computerPlay) {
+            if (playerSelection == 'rock' && computerSelection == 'scissors') {
+                alert('Computer has selected scissors and you have selected rock, YOU WIN!!');} 
+            else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+                alert('Computer has selected paper and you have selected scissors, YOU WIN!!');}
+            else if (playerSelection == 'paper' && computerSelection == 'rock') {
+                alert('Computer has selected paper and you have selected scissors, YOU WIN!!');}
+            else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+                alert('Computer has selected scissors and you have selected rock, YOU LOSE!!');}
+            else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+                alert('Computer has selected rock and you have selected scissors, YOU LOSE!!');}
+            else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+                alert('Computer has selected scissors and you have selected paper, YOU LOSE!!');}
+            else {
+                alert('We have a TIE!');}   
+        }
+
+        game();
+
+
+
+    </script>
 </body>
 </html>
