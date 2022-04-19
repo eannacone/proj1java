@@ -16,6 +16,7 @@
 
         let computerScore = 0
         let playerScore = 0
+        let tied = 0
 
         function playRound() {
             let playerInput = window.prompt("Enter your choice: rock, paper or scissors")
@@ -28,8 +29,7 @@
 
             if (playerSelection === computerSelection) {
                 alert('We have a TIE!! Try again.')
-                playerScore ++
-                computerScore ++
+                tied ++
             } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
                 alert('Computer has selected scissors and you have selected rock, YOU WIN!!')
                 playerScore ++
@@ -58,7 +58,7 @@
             for (let i = 0; i < 5; i++) {
                 playRound();
             }  
-                alert(`Your score: ${playerScore}` + ` Computer score: ${computerScore}`)
+                alert(`Your score: ${playerScore}` + `   Computer score: ${computerScore}` + `   Ties: ${tied}`)
         }
 
         game()
