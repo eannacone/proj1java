@@ -9,12 +9,18 @@
 <body>
     <script>
         var options = ['rock', 'paper', 'scissors'];
-        let computerPlay = options[Math.floor(Math.random()*options.length)];
-        let playerSelection = window.prompt("Enter your choice: rock, paper or scissors")
-        let computerSelection = computerPlay
+        /// let computerPlay = options[Math.floor(Math.random()*options.length)];
+        /// let playerInput = window.prompt("Enter your choice: rock, paper or scissors")
+        /// let playerSelection = playerInput.toLowerCase();
+        /// let computerSelection = computerPlay
 
-        function game() {
-            console.log(computerSelection);
+        function playRound() {
+            let playerInput = window.prompt("Enter your choice: rock, paper or scissors")
+            let playerSelection = playerInput.toLowerCase();
+
+            let computerPlay = options[Math.floor(Math.random()*options.length)];
+            let computerSelection = computerPlay
+
             if (playerSelection === computerSelection) {
                 alert('We have a TIE!! Try again.')
             } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
@@ -23,7 +29,7 @@
                 alert('Computer has selected paper and you have selected scissors, YOU WIN!!')
             } else if (playerSelection === 'paper' && computerSelection === 'rock') {
                 alert('Computer has selected rock and you have selected paper, YOU WIN!!')
-            } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+            } else if (playerSelection === 'rock' && computerSelection === 'paper') {
                 alert('Computer has selected scissors and you have selected rock, YOU LOSE!!')
             } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
                 alert('Computer has selected rock and you have selected scissors, YOU LOSE!!')
@@ -31,11 +37,17 @@
                 alert('Computer has selected scissors and you have selected paper, YOU LOSE!!')
             } else {
                 alert('Error: please input valid choice.');
+                }
+            }
+
+
+        function game() {
+            for (let i = 0; i < 5; i++) {
+                playRound();
             }
         }
 
-        game();
-
+        game()
 
 
     </script>
